@@ -2,11 +2,11 @@ name: "Build and Deploy"
 on:
   push:
     branches:
+      - gh-pages
       - main
       - master
     paths-ignore:
       - .gitignore
-      - README.md
       - LICENSE
 
   # Allows you to run this workflow manually from the Actions tab
