@@ -13,6 +13,74 @@ jekyll-theme-WuK:
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+  .post-card {
+    margin-bottom: 20px;
+    background-color: rgba(173, 216, 230, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .post-card img {
+    width: 500px;
+    height: 375px;
+    /* object-fit: cover; */
+    float: left;
+  }
+  
+  .post-card .card-content {
+    width: 100%;
+  }
+  
+  .post-card h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .post-card .post-date {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .post-card .journal-info {
+    font-size: 14px;
+    color: #e8541eb7;
+    margin: 5px 0;
+  }
+  
+  .post-card p {
+    margin: 10px 0 0;
+    line-height: 1.6;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .post-card a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .post-card a:hover {
+    text-decoration: underline;
+  }
+  </style>
+<!-- <style>
 .post-card {
   margin-bottom: 20px;
   background-color: #eeedede3;
@@ -58,7 +126,7 @@ jekyll-theme-WuK:
   color: #e8541eb7;
   margin: 5px 0;
 }
-</style>
+</style> -->
 </head>
 <body>
 
@@ -66,7 +134,7 @@ jekyll-theme-WuK:
 <div class="post-card">
   <div class="card-content">
     <h3>SeisFusion: Constrained Diffusion Model With Input Guidance for 3-D Seismic Data Interpolation and Reconstruction<div class="post-date"><i class="fas fa-calendar-alt"></i> 2024-09-18</div> <div class="journal-info">Published in IEEE Transactions On Geoscience and Remote Sensing</div></h3>
-    <p> <img src="../img/guided.png" alt="Image description" style="width: 650px; height: 350px;">Seismic data often suffer from missing traces, and traditional reconstruction methods are cumbersome in parameterization and struggle to handle large-scale missing data. While deep learning has shown powerful reconstruction capabilities, convolutional neural networks’ point-to-point reconstruction may not fully cover the distribution of the entire dataset and may suffer performance degradation under complex missing patterns. In response to this challenge, we propose a novel diffusion model reconstruction framework tailored for 3D seismic data. To facilitate three-dimensional seismic data reconstruction using diffusion models, we introduce conditional constraints into the diffusion model, constraining the generated data of the diffusion model based on the input data to be reconstructed. We introduce a 3D neural network architecture into the diffusion model and refine the diffusion model’s generation process by incorporating existing parts of the data into the generation process, resulting in reconstructions with higher consistency. Through ablation studies determining optimal parameter values, although the sampling time is longer, our method exhibits superior reconstruction accuracy when applied to both field datasets and synthetic datasets, effectively addressing a wide range of complex missing patterns. Our implementation is available at https://github.com/WAL-l/SeisFusion.</p>
+    <p> <img src="../img/guided.png" alt="Image description">Seismic data often suffer from missing traces, and traditional reconstruction methods are cumbersome in parameterization and struggle to handle large-scale missing data. While deep learning has shown powerful reconstruction capabilities, convolutional neural networks’ point-to-point reconstruction may not fully cover the distribution of the entire dataset and may suffer performance degradation under complex missing patterns. In response to this challenge, we propose a novel diffusion model reconstruction framework tailored for 3D seismic data. To facilitate three-dimensional seismic data reconstruction using diffusion models, we introduce conditional constraints into the diffusion model, constraining the generated data of the diffusion model based on the input data to be reconstructed. We introduce a 3D neural network architecture into the diffusion model and refine the diffusion model’s generation process by incorporating existing parts of the data into the generation process, resulting in reconstructions with higher consistency. Through ablation studies determining optimal parameter values, although the sampling time is longer, our method exhibits superior reconstruction accuracy when applied to both field datasets and synthetic datasets, effectively addressing a wide range of complex missing patterns. Our implementation is available at https://github.com/WAL-l/SeisFusion.</p>
     <a href="https://ieeexplore.ieee.org/document/10681481">Read more about this</a>
   </div>
 </div>

@@ -33,7 +33,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
         default:
           body:
             theme-base: theme-base-07 # 可选的主题色包括08~0f，见 <https://github.com/poole/lanyon>
-            layout-reverse: true # 开启后sidebar在右边，反之左边
+            layout-reverse: false # 开启后sidebar在右边，反之左边
             sidebar-overlay: true # 开启后正文不随sidebar移动而移动
           html_lang: en # <https://www.w3school.com.cn/tags/html_ref_language_codes.asp>
           sidebar: # 此配置项下是一些关于侧边栏的配置
@@ -522,7 +522,26 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
             - smart_include:
                 enable: false
               append: |
-                <script src="https://fastly.jsdelivr.net/gh/WAL-l/live2d-widget/autoload.js"></script>
+                <link
+                  rel="stylesheet"
+                  href="https://cdn.jsdelivr.net/npm/sakana-widget@2.7.0/lib/sakana.min.css"
+                />
+                <script>
+                  function initSakanaWidget() {
+                    let sakana = document.createElement("div");
+                    sakana.style.bottom = "0";
+                    sakana.style.right = "0";
+                    sakana.style.zIndex = "1";
+                    sakana.style.position = "fixed";
+                    document.body.insertAdjacentElement("beforeend", sakana);
+                    new SakanaWidget().mount(sakana);
+                  }
+                </script>
+                <script
+                  async
+                  onload="initSakanaWidget()"
+                  src="https://cdn.jsdelivr.net/npm/sakana-widget@2.7.0/lib/sakana.min.js"
+                ></script>
         post:
           date: # 显示博文时间
             enable: true
