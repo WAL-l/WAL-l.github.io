@@ -16,13 +16,15 @@ jekyll-theme-WuK:
   .post-card {
     margin-bottom: 20px;
     background-color: rgba(173, 216, 230, 0.1);
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    height: 380px;
+    width: 105%;
   }
   
   .post-card:hover {
@@ -31,10 +33,12 @@ jekyll-theme-WuK:
   }
   
   .post-card img {
-    width: 500px;
-    height: 375px;
+    width: 320px;
+    height: 225px;
     /* object-fit: cover; */
     float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
   }
   
   .post-card .card-content {
@@ -62,9 +66,11 @@ jekyll-theme-WuK:
   
   .post-card p {
     margin: 10px 0 0;
-    line-height: 1.6;
-    font-size: 16px;
-    color: #555;
+    /* line-height: 1.8; 增加行间距 */
+    font-size: 15px; /* 调整字体大小 */
+    color: #333; /* 调整字体颜色 */
+    text-indent: 0;
+    text-align: justify; /* 文字两端对齐 */
   }
   
   .post-card a {
@@ -80,61 +86,36 @@ jekyll-theme-WuK:
     text-decoration: underline;
   }
   </style>
-<!-- <style>
-.post-card {
-  margin-bottom: 20px;
-  background-color: #eeedede3;
-  padding: 10px;
-  overflow: hidden;
-}
-
-.post-card img {
-  width: 500px;
-  height: 375px;
-  object-fit: cover;
-  float: left;
-}
-
-.post-card .card-content {
-  overflow: hidden;
-}
-
-.post-card h3 {
-  margin-top: 0;
-}
-
-.post-card p {
-  margin: 0;
-  line-height:1.1;
-  font-size: 15px;
-}
-
-.post-card a {
-  display: block;
-  margin-top: 10px;
-  text-decoration: none;
-  color: #007BFF;
-  font-size: 15px;
-}
-.post-card .post-date {
-  font-size: 14px;
-  color: #666;
-  margin: 5px 0;
-}
-.post-card .journal-info {
-  font-size: 14px;
-  color: #e8541eb7;
-  margin: 5px 0;
-}
-</style> -->
 </head>
 <body>
+  <div class="post-card">
+    <div class="card-content">
+      <h3>Interpretable Deep Learning Paradigm for Airborne Transient Electromagnetic Inversion<div class="post-date"><i class="fas fa-calendar-alt"></i> 202x-x-x</div> <div class="journal-info">Submitted to geopysics</div></h3>
+      <p> <img src="../img/d_in.png" alt="Image description" style="width: 350px;">Propose a unified and interpretable deep learning inversion paradigm based on disentangled representation learning. The network explicitly decomposes noisy data into noise and signal factors, completing the entire data processing workflow based on the signal factors while incorporating physical information for guidance. This approach enhances the network's reliability and interpretability. </p>
+      <a href="https://arxiv.org/abs/2503.22214">Read more about this</a>
+    </div>
+  </div>
 
+  <div class="post-card">
+    <div class="card-content">
+      <h3>DREMnet: An Interpretable Denoising Framework for Semi-Airborne Transient Electromagnetic Signal<div class="post-date"><i class="fas fa-calendar-alt"></i> 202x-x-x</div> <div class="journal-info">Submitted to TGRS</div></h3>
+      <p> <img src="../img/DREM.png" alt="Image description" style="width: 350px;">Propose an interpretable decoupled representation learning framework, termed DREMnet, that disentangles data into content and context factors, enabling robust and interpretable denoising in complex conditions. To address the limitations of CNN and Transformer architectures, we utilize the RWKV architecture for data processing and introduce the Contextual-WKV mechanism, which allows unidirectional WKV to perform bidirectional signal modeling.</p>
+      <a href="https://arxiv.org/abs/2503.22223">Read more about this</a>
+    </div>
+  </div>
+
+  <div class="post-card">
+    <div class="card-content">
+      <h3>SeisRDT: Latent Diffusion Model Based On Representation Learning For Seismic Data Interpolation And Reconstruction<div class="post-date"><i class="fas fa-calendar-alt"></i> 202x-x-x</div> <div class="journal-info">Submitted to geopysics (minor)</div></h3>
+      <p> <img src="../img/rdt.png" alt="Image description" style="width: 400px;">Propose a latent diffusion transformer utilizing representation learning for seismic data reconstruction. By employing a mask modeling scheme based on representation learning, the representation module uses the token sequence of known data to infer the token sequence of unknown data, enabling the reconstructed data from the diffusion model to have a more consistent data distribution and better correlation and accuracy with the known data. </p>
+      <a href="https://arxiv.org/abs/2503.21791">Read more about this</a>
+    </div>
+  </div>
 
 <div class="post-card">
   <div class="card-content">
     <h3>SeisFusion: Constrained Diffusion Model With Input Guidance for 3-D Seismic Data Interpolation and Reconstruction<div class="post-date"><i class="fas fa-calendar-alt"></i> 2024-09-18</div> <div class="journal-info">Published in IEEE Transactions On Geoscience and Remote Sensing</div></h3>
-    <p> <img src="../img/guided.png" alt="Image description">Seismic data often suffer from missing traces, and traditional reconstruction methods are cumbersome in parameterization and struggle to handle large-scale missing data. While deep learning has shown powerful reconstruction capabilities, convolutional neural networks’ point-to-point reconstruction may not fully cover the distribution of the entire dataset and may suffer performance degradation under complex missing patterns. In response to this challenge, we propose a novel diffusion model reconstruction framework tailored for 3D seismic data. To facilitate three-dimensional seismic data reconstruction using diffusion models, we introduce conditional constraints into the diffusion model, constraining the generated data of the diffusion model based on the input data to be reconstructed. We introduce a 3D neural network architecture into the diffusion model and refine the diffusion model’s generation process by incorporating existing parts of the data into the generation process, resulting in reconstructions with higher consistency. Through ablation studies determining optimal parameter values, although the sampling time is longer, our method exhibits superior reconstruction accuracy when applied to both field datasets and synthetic datasets, effectively addressing a wide range of complex missing patterns. Our implementation is available at https://github.com/WAL-l/SeisFusion.</p>
+    <p> <img src="../img/guided.png" alt="Image description">Propose a novel diffusion model reconstruction framework tailored for 3D seismic data, constraining the generated data of the diffusion model based on the input data to be reconstructed. Introduce a 3D neural network architecture into the diffusion model and refine the diffusion model’s generation process by incorporating existing parts of the data into the generation process, resulting in reconstructions with higher consistency.</p>
     <a href="https://ieeexplore.ieee.org/document/10681481">Read more about this</a>
   </div>
 </div>
@@ -142,13 +123,10 @@ jekyll-theme-WuK:
 <div class="post-card">
   <div class="card-content">
     <h3>Seismic Data Reconstruction Based On Conditional Constraint Diffusion Model<div class="post-date"><i class="fas fa-calendar-alt"></i> 2024-02-29</div> <div class="journal-info">Published in IEEE Geoscience and Remote Sensing Letters</div></h3>
-    <p> <img src="../img/2D_RES.png" alt="Image description">Reconstruction of complete seismic data is a crucial step in seismic data processing, which has seen the application of various convolutional neural networks (CNNs). These CNNs typically establish a direct mapping function between input and output data. In contrast, diffusion models which learn the feature distribution of the data, have shown promise in enhancing the accuracy and generalization capabilities of predictions by capturing the distribution of output data. However, diffusion models lack constraints based on input data. In order to use the diffusion model for seismic data interpolation, our study introduces conditional constraints to control the interpolation results of diffusion models based on input data. Furthermore, we improving the sampling process of the diffusion model to ensure higher consistency between the interpolation results and the existing data. Experimental results conducted on synthetic and field datasets demonstrate that our method outperforms existing methods in terms of achieving more accurate interpolation results, with SSIM outperforming existing methods by 4.1% and SNR by 24%. Our implementation is available at https://github.com/WAL-l/Reconstruction.</p>
+    <p> <img src="../img/2D_RES.png" alt="Image description">In order to use the diffusion model for seismic data interpolation, our study introduces conditional constraints to control the interpolation results of diffusion models based on input data. Furthermore, we improving the sampling process of the diffusion model to ensure higher consistency between the interpolation results and the existing data.</p>
     <a href="https://ieeexplore.ieee.org/document/10453526">Read more about this</a>
   </div>
 </div>
-
-
-
 
 </body>
 </html>
